@@ -1,111 +1,147 @@
-#  AI Log Monitoring Microservice
+# 🧠 AI Log Monitoring Microservice
 
-An AI-powered log anomaly detection microservice built using FastAPI and Isolation Forest.  
-Fully containerized with Docker and integrated with CI/CD using GitHub Actions.
+An AI-powered log anomaly detection microservice built with **FastAPI**
+and **Isolation Forest**.\
+Fully containerized using **Docker** and automated with **CI/CD (GitHub
+Actions)** --- perfect for learning, demos, and portfolio projects.
 
----
+------------------------------------------------------------------------
 
-##  Project Overview
+## 🚀 Project Overview
 
-This project detects anomalies in log data using Machine Learning and exposes the functionality via a REST API.
+This service detects anomalies in application/system logs using Machine
+Learning and exposes predictions through a REST API.
 
-The application is:
+### ✨ Key Features
 
-- > Built with FastAPI
-- > Powered by Isolation Forest (Scikit-Learn)
-- > Containerized using Docker
-- > Automated testing using Pytest
-- > CI/CD pipeline using GitHub Actions
-- > Docker image publishing support
+-   ⚡ FastAPI-based REST API
+-   🤖 ML-powered anomaly detection (Isolation Forest -- Scikit-learn)
+-   🐳 Dockerized for easy deployment
+-   🧪 Automated testing with Pytest
+-   🔄 CI/CD pipeline with GitHub Actions
+-   📦 Docker image build & publish support
 
----
+------------------------------------------------------------------------
 
-##  Architecture
+## 🏗️ Architecture
 
-Client → FastAPI REST API → ML Model (Isolation Forest) → Anomaly Prediction
+**Request Flow**\
+Client → FastAPI REST API → ML Model (Isolation Forest) → Anomaly
+Prediction
 
-CI/CD Flow:
+**CI/CD Flow**\
+Push to GitHub → GitHub Actions → Run Tests → Build Docker Image → Push
+to Docker Hub
 
-Push to GitHub → GitHub Actions → Run Tests → Build Docker Image → Push to Docker Hub
+------------------------------------------------------------------------
 
----
+## 🛠️ Tech Stack
 
-##  Tech Stack
+-   Python 3.12\
+-   FastAPI\
+-   Scikit-learn\
+-   Pytest\
+-   Docker\
+-   GitHub Actions
 
-- Python 3.12
-- FastAPI
-- Scikit-learn
-- Pytest
-- Docker
-- GitHub Actions
+------------------------------------------------------------------------
 
----
+## 📁 Project Structure
 
-##  Project Structure
+    ai-log-monitor/
+    │
+    ├── app/
+    │   ├── __init__.py
+    │   ├── api.py
+    │   └── model.py
+    │
+    ├── tests/
+    │   └── test_basic.py
+    │
+    ├── Dockerfile
+    ├── requirements.txt
+    ├── pytest.ini
+    └── .github/workflows/ci.yml
 
-ai-log-monitor/
-│
-├── app/
-│ ├── init.py
-│ ├── api.py
-│ └── model.py
-│
-├── tests/
-│ └── test_basic.py
-│
-├── Dockerfile
-├── requirements.txt
-├── pytest.ini
-└── .github/workflows/ci.yml
+------------------------------------------------------------------------
 
+## 🧑‍💻 Running Locally
 
----
+### 1️⃣ Clone Repository
 
-##  Running Locally
-
-###  Clone Repository
-
-```bash
+``` bash
 git clone https://github.com/Sanjeeviram-07/ai-log-monitor.git
 cd ai-log-monitor
-### **Create Virtual Environment**
+```
+
+### 2️⃣ Create Virtual Environment
+
+``` bash
 python3 -m venv venv
-source venv/bin/activate
-**Install Dependencies**
-**pip install -r requirements.txt
- Run API**
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 3️⃣ Install Dependencies
+
+``` bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run API
+
+``` bash
 uvicorn app.api:app --reload
-**Open in browser:**
-http://localhost:8000/docs
+```
 
-**Run Using Docker**
-**Build Image**
+📌 Open Swagger UI:\
+👉 http://localhost:8000/docs
+
+------------------------------------------------------------------------
+
+## 🐳 Run Using Docker
+
+### Build Image
+
+``` bash
 docker build -t ai-log-monitor .
-**Run Container**
+```
+
+### Run Container
+
+``` bash
 docker run -p 8000:8000 ai-log-monitor
-** CI/CD Pipeline**
-This project uses GitHub Actions to:
->
-Install dependencies
->
-Run automated tests
->
-Build Docker image
->
-Push Docker image to Docker Hub
->
-The pipeline runs automatically on every push to the main branch.
+```
 
-- >**Future Improvements**
-Add Prometheus metrics
+------------------------------------------------------------------------
 
-Add structured logging
+## 🔄 CI/CD Pipeline
 
-Deploy to AWS / Render
+This project uses **GitHub Actions** to automatically:
 
-Add React-based dashboard UI
+-   Install dependencies\
+-   Run Pytest\
+-   Build Docker image\
+-   Push image to Docker Hub
 
-Add real-time log ingestion pipeline
+The pipeline runs on every push to the **main** branch.
 
-** License**
-This project is open-source for learning and portfolio purposes.
+------------------------------------------------------------------------
+
+## 🔮 Future Improvements
+
+-   📊 Add Prometheus metrics\
+-   🪵 Add structured logging\
+-   ☁️ Deploy to AWS / Render\
+-   🖥️ Add React-based dashboard UI\
+-   🔁 Real-time log ingestion pipeline (Kafka / Fluentd)
+
+------------------------------------------------------------------------
+
+## 📜 License
+
+This project is open-source and intended for **learning and portfolio
+purposes**.
+
+------------------------------------------------------------------------
+
+⭐ If you found this useful, feel free to star the repository!
